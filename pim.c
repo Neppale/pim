@@ -159,7 +159,14 @@ void menu(){
 }
 
 void calendario() {
-    //todo errado pq eu tava aprendendo a usar strcmp de madrugada
+    system("cls");
+    printf("\nEsta funcao ainda esta em desenvolvimento.\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    getchar();
+    system("cls");
+    menu();
+    /*todo errado pq eu tava aprendendo a usar strcmp de madrugada
     int selecaodia;
     char selecaomes[6];
     fflush(stdin);
@@ -185,7 +192,7 @@ void calendario() {
     } else {
         printf("Mes invalido. Verifique a ortografia.\n\n");
     }
-
+*/
 }
 
 void main(){
