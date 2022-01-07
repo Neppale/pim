@@ -107,7 +107,7 @@ void cadastroatleta(){
     char lastline[150];
 
     FILE *atletaspointer; 
-    atletaspointer = fopen("Database/data.csv", "a+"); 
+    atletaspointer = fopen("Database/atletas.csv", "a+"); 
 
     while (!feof(atletaspointer)){
         fgets(lastline, 150, atletaspointer);     //calculando quantas linhas pular pra definir o codigo do atleta
@@ -144,20 +144,9 @@ void cadastroatleta(){
     fgets(atual.modalidade, LIMITEMAXIMO, stdin);
     atual.modalidade[strlen(atual.modalidade) - 1] = '\0';
     fflush(stdin);
-        
 
-    fprintf(atletaspointer, "%d", atual.codigo);
-    fprintf(atletaspointer, ",");
-    fprintf(atletaspointer, "%s", atual.nome);
-    fprintf(atletaspointer, ",");
-    fprintf(atletaspointer, "%d", atual.idade);
-    fprintf(atletaspointer, ",");
-    fprintf(atletaspointer, "%s", atual.sexo);
-    fprintf(atletaspointer, ",");
-    fprintf(atletaspointer, "%s", atual.nacionalidade);
-    fprintf(atletaspointer, ",");
-    fprintf(atletaspointer, "%s", atual.modalidade);
-    fprintf(atletaspointer, "\n");
+    //Cadastro da modalidade no arquivo.
+    fprintf(atletaspointer, "%d,%s,%d,%s,%s,%s\n",atual.codigo, atual.nome, atual.idade, atual.sexo, atual.nacionalidade, atual.modalidade); 
 
     //Atleta cadastrado no data.csv!
 
@@ -236,24 +225,8 @@ void cadastromodalidade(){
     atual.regra5[strlen(atual.regra5) - 1] = '\0';
     fflush(stdin);
 
-    fprintf(modalidadepointer, "%d", atual.id);
-    fprintf(modalidadepointer, ",");
-    fprintf(modalidadepointer, "%s", atual.nome);
-    fprintf(modalidadepointer, ",");
-    fprintf(modalidadepointer, "%d", atual.idade);
-    fprintf(modalidadepointer, ",");
-    fprintf(modalidadepointer, "%s", atual.sexo);
-    fprintf(modalidadepointer, ",");
-    fprintf(modalidadepointer, "%s", atual.regra1);
-    fprintf(modalidadepointer, ",");
-    fprintf(modalidadepointer, "%s", atual.regra2);
-    fprintf(modalidadepointer, ",");
-    fprintf(modalidadepointer, "%s", atual.regra3);
-    fprintf(modalidadepointer, ",");
-    fprintf(modalidadepointer, "%s", atual.regra4);
-    fprintf(modalidadepointer, ",");
-    fprintf(modalidadepointer, "%s", atual.regra5);
-    fprintf(modalidadepointer, "\n");
+    //Cadastro da modalidade no arquivo.
+    fprintf(modalidadepointer, "%d,%s,%d,%s,%s,%s,%s,%s,%s\n",atual.id, atual.nome, atual.idade, atual.sexo, atual.regra1, atual.regra2, atual.regra3, atual.regra4, atual.regra5); 
 
     //Modalidade cadastrada no modalidades.csv!
 
@@ -301,14 +274,8 @@ void cadastroequipe(){
     scanf("%d", &atual.qtdfuncionarios);
     fflush(stdin);
 
-
-
-    fprintf(equipepointer, "%d", atual.id);
-    fprintf(equipepointer, ",");
-    fprintf(equipepointer, "%s", atual.pais);
-    fprintf(equipepointer, ",");
-    fprintf(equipepointer, "%d", atual.qtdfuncionarios);
-    fprintf(equipepointer, "\n");
+    //Cadastro de equipe no arquivo.
+    fprintf(equipepointer, "%d,%s,%d\n",atual.id, atual.pais, atual.qtdfuncionarios);
 
     //Equipe cadastrada no equipes.csv!
 
@@ -369,19 +336,8 @@ void cadastropais(){
     scanf("%d", &atual.qtdfuncionarios);
     fflush(stdin);
 
-
-    fprintf(paispointer, "%d", counter);
-    fprintf(paispointer, ",");
-    fprintf(paispointer, "%s", atual.nome);
-    fprintf(paispointer, ",");
-    fprintf(paispointer, "%s", atual.id);
-    fprintf(paispointer, ",");
-    fprintf(paispointer, "%d", atual.qtdatletas);
-    fprintf(paispointer, ",");
-    fprintf(paispointer, "%d", atual.qtdmedicos);
-    fprintf(paispointer, ",");
-    fprintf(paispointer, "%d", atual.qtdatletas); 
-    fprintf(paispointer, "\n");
+    //Cadastro de país no arquivo.
+    fprintf(paispointer, "%d,%s,%s,%d,%d,%d\n", counter, atual.nome, atual.id, atual.qtdatletas, atual.qtdmedicos, atual.qtdfuncionarios);
 
     //Pais cadastrado no paises.csv!
 
@@ -432,14 +388,8 @@ void cadastroalojamento(){
     atual.sexo[strlen(atual.sexo) - 1] = '\0';
     fflush(stdin);
 
-    fprintf(alojamentospointer, "%d", counter);
-    fprintf(alojamentospointer, ",");
-    fprintf(alojamentospointer, "%d", atual.qtdatletas);
-    fprintf(alojamentospointer, ",");
-    fprintf(alojamentospointer, "%c", atual.setor);
-    fprintf(alojamentospointer, ",");
-    fprintf(alojamentospointer, "%s", atual.sexo);
-    fprintf(alojamentospointer, "\n");
+    //Cadastro de alojamento no arquivo.
+    fprintf(alojamentospointer, "%d,%d,%c,%s\n",counter, atual.qtdatletas, atual.setor, atual.sexo);
 
     //Alojamento cadastrado no alojamentos.csv!
 
@@ -487,12 +437,8 @@ void cadastrolocais(){
     atual.modalidade[strlen(atual.modalidade) - 1] = '\0';
     fflush(stdin);
 
-    fprintf(locaispointer, "%d", counter);
-    fprintf(locaispointer, ",");
-    fprintf(locaispointer, "%s", atual.nome);
-    fprintf(locaispointer, ",");
-    fprintf(locaispointer, "%s", atual.modalidade);
-    fprintf(locaispointer, "\n");
+    //Cadastro de local no arquivo.
+    fprintf(locaispointer, "%d,%s,%s\n", counter, atual.nome, atual.modalidade);
 
     //Local cadastrado no locaisjogos.csv!
 
@@ -565,23 +511,10 @@ void cadastroequipamentos(){
     fgets(atual.equipamentoprotecao3, LIMITEMAXIMO, stdin);
     atual.equipamentoprotecao3[strlen(atual.equipamentoprotecao3) - 1] = '\0';
     fflush(stdin);
-
-    fprintf(equipamentospointer, "%d", counter);
-    fprintf(equipamentospointer, ",");
-    fprintf(equipamentospointer, "%s", atual.modalidade);
-    fprintf(equipamentospointer, ",");
-    fprintf(equipamentospointer, "%s", atual.equipamentojogo1);
-    fprintf(equipamentospointer, ",");
-    fprintf(equipamentospointer, "%s", atual.equipamentojogo2);
-    fprintf(equipamentospointer, ",");
-    fprintf(equipamentospointer, "%s", atual.equipamentojogo3);
-    fprintf(equipamentospointer, ",");
-    fprintf(equipamentospointer, "%s", atual.equipamentoprotecao1);
-    fprintf(equipamentospointer, ",");
-    fprintf(equipamentospointer, "%s", atual.equipamentoprotecao2);
-    fprintf(equipamentospointer, ",");
-    fprintf(equipamentospointer, "%s", atual.equipamentoprotecao3);
-    fprintf(equipamentospointer, "\n");
+    
+    //Cadastro de equipamentos no arquivo.
+    fprintf(equipamentospointer, "%d,%s,%s,%s,%s,%s,%s,%s\n", counter, atual.modalidade, atual.equipamentojogo1, atual.equipamentojogo2, atual.equipamentojogo3, atual.equipamentoprotecao1, atual.equipamentoprotecao2, atual.equipamentoprotecao3);
+    
 
     //Equipamento cadastrado no equipamentos.csv!
 
@@ -636,16 +569,8 @@ void cadastrotreinamentos(){
     scanf("%d", &atual.frequencia);
     fflush(stdin);
 
-    fprintf(treinamentospointer, "%d", counter);
-    fprintf(treinamentospointer, ",");
-    fprintf(treinamentospointer, "%s", atual.nome);
-    fprintf(treinamentospointer, ",");
-    fprintf(treinamentospointer, "%d", atual.data);
-    fprintf(treinamentospointer, ",");
-    fprintf(treinamentospointer, "%d", atual.horario);
-    fprintf(treinamentospointer, ",");
-    fprintf(treinamentospointer, "%d", atual.frequencia);
-    fprintf(treinamentospointer, "\n");
+    //Cadastro de treinamentos no arquivo.
+    fprintf(treinamentospointer, "%d,%s,%d,%d,%d\n", counter, atual.nome, atual.data, atual.horario, atual.frequencia);
 
     //Treinamento cadastrado no treinamentos.csv!
 
@@ -699,14 +624,8 @@ void cadastromedicos(){
     atual.especializacao[strlen(atual.especializacao) - 1] = '\0';
     fflush(stdin);
 
-    fprintf(medicopointer, "%d", atual.id);
-    fprintf(medicopointer, ",");
-    fprintf(medicopointer, "%s", atual.nome);
-    fprintf(medicopointer, ",");
-    fprintf(medicopointer, "%s", atual.pais);
-    fprintf(medicopointer, ",");
-    fprintf(medicopointer, "%s", atual.especializacao);
-    fprintf(medicopointer, "\n");
+    //Cadastro de medicos no arquivo.
+    fprintf(medicopointer, "%d,%s,%s,%s\n",atual.id, atual.nome, atual.pais, atual.especializacao);
 
     //Medico cadastrado no medicos.csv!
 
@@ -766,16 +685,8 @@ void cadastrofuncionarios(){
     atual.cargo[strlen(atual.cargo) - 1] = '\0';
     fflush(stdin);
 
-    fprintf(funcionariospointer, "%d", atual.id);
-    fprintf(funcionariospointer, ",");
-    fprintf(funcionariospointer, "%s", atual.nome);
-    fprintf(funcionariospointer, ",");
-    fprintf(funcionariospointer, "%s", atual.pais);
-    fprintf(funcionariospointer, ",");
-    fprintf(funcionariospointer, "%s", atual.areadeatuacao);
-    fprintf(funcionariospointer, ",");
-    fprintf(funcionariospointer, "%s", atual.cargo);
-    fprintf(funcionariospointer, "\n");
+    //Cadastro de funcionários no arquivo.
+    fprintf(funcionariospointer, "%d,%s,%s,%s,%s\n",atual.id, atual.nome, atual.pais, atual.areadeatuacao, atual.cargo);
 
     //Funcionario cadastrado no funcionarios.csv!
 
@@ -825,12 +736,8 @@ void cadastrovoluntarios(){
     atual.pais[strlen(atual.pais) - 1] = '\0';
     fflush(stdin);
 
-    fprintf(voluntariospointer, "%d", atual.id);
-    fprintf(voluntariospointer, ",");
-    fprintf(voluntariospointer, "%s", atual.nome);
-    fprintf(voluntariospointer, ",");
-    fprintf(voluntariospointer, "%s", atual.pais);
-    fprintf(voluntariospointer, "\n");
+    //Cadastro de voluntários no arquivo.
+    fprintf(voluntariospointer, "%d,%s,%s\n",atual.id, atual.nome, atual.pais);
 
     //Voluntario cadastrado no voluntarios.csv!
 
@@ -880,12 +787,8 @@ void cadastroinspetores(){
     atual.pais[strlen(atual.pais) - 1] = '\0';
     fflush(stdin);
 
-    fprintf(inspetorespointer, "%d", atual.id);
-    fprintf(inspetorespointer, ",");
-    fprintf(inspetorespointer, "%s", atual.nome);
-    fprintf(inspetorespointer, ",");
-    fprintf(inspetorespointer, "%s", atual.pais);
-    fprintf(inspetorespointer, "\n");
+    //Cadastro de inspetores no arquivo.
+    fprintf(inspetorespointer, "%d,%s,%s\n",atual.id, atual.nome, atual.pais);
 
     //Inspetor cadastrado no inspetorescovid.csv!
 
