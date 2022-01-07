@@ -3,25 +3,131 @@
 #include <string.h>
 #include "menu.h"
 
-void menu();
-void calendario();
-void cadastromodalidade();
-void cadastroequipe();
-void cadastropais();
-void cadastroalojamento();
-void cadastrolocais();
-void cadastroequipamentos();
-void cadastrotreinamentos();
-void cadastromedicos();
-void cadastrofuncionarios();
-void cadastrovoluntarios();
-void cadastroinspetores();
-void cadastroatleta();
-void main();
+void selecaoCadastro() {
+    int selecao2;
+
+    printf("\nSelecione uma opcao digitando seu respectivo numero abaixo: \n");
+    printf("1 - Cadastro de Atletas \n");
+    printf("2 - Cadastro de Modalidade \n");
+    printf("3 - Cadastro de Equipe Olimpica \n");
+    printf("4 - Cadastro de Pais \n");
+    printf("5 - Cadastro de Alojamento \n");
+    printf("6 - Cadastro de Locais de Jogos \n");
+    printf("7 - Cadastro de Equipamentos \n");
+    printf("8 - Cadastro de Medicos \n");
+    printf("9 - Cadastro de Funcionarios \n");
+    printf("10 - Cadastro de Voluntarios \n");
+    printf("11 - Cadastro de Inspetores COVID \n");
+    //printf("12 - Voltar \n");
+    while ((selecao2 < 1) || (selecao2 > 11)) {
+        scanf("%d", & selecao2);
+    }
+
+    switch (selecao2) {
+    case 1:
+        cadastroatleta();
+        break;
+    case 2:
+        cadastromodalidade();
+        break;
+    case 3:
+        cadastroequipe();
+        break;
+    case 4:
+        cadastropais();
+        break;
+    case 5:
+        cadastroalojamento();
+        break;
+    case 6:
+        cadastrolocais();
+        break;
+    case 7:
+        cadastroequipamentos();
+        break;
+    case 8:
+        cadastromedicos();
+        break;
+    case 9:
+        cadastrofuncionarios();
+        break;
+    case 10:
+        cadastrovoluntarios();
+        break;
+    case 11:
+        cadastroinspetores();
+    case 12:
+        break;
+    default:
+        break;
+    }
+}
+
+void selecaoRelatorio(){
+    int selecao2;
+
+    printf("\nSelecione uma opcao digitando seu respectivo numero abaixo: \n");
+    printf("1 - Relatorio de Atletas \n");
+    printf("2 - Relatorio de Modalidade \n");
+    printf("3 - Relatorio de Equipe Olimpica \n");
+    printf("4 - Relatorio de Pais \n");
+    printf("5 - Relatorio de Alojamento \n");
+    printf("6 - Relatorio de Locais de Jogos \n");
+    printf("7 - Relatorio de Equipamentos \n");
+    printf("8 - Relatorio de Medicos \n");
+    printf("9 - Relatorio de Funcionarios \n");
+    printf("10 - Relatorio de Voluntarios \n");
+    printf("11 - Relatorio de Inspetores COVID \n");
+    //printf("12 - Voltar \n");
+    while ((selecao2 < 1) || (selecao2 > 11)) {
+        scanf("%d", & selecao2);
+    }
+
+    switch (selecao2) {
+    case 1:
+        relatorioAtleta();
+        break;
+    case 2:
+        relatorioModalidade();
+        break;
+    case 3:
+        relatorioEquipe();
+        break;
+    case 4:
+        relatorioPais();
+        break;
+    case 5:
+        relatorioAlojamento();
+        break;
+    case 6:
+        relatorioLocais();
+        break;
+    case 7:
+        relatorioEquipamentos();
+        break;
+    case 8:
+        relatorioMedicos();
+        break;
+    case 9:
+        relatorioFuncionarios();
+        break;
+    case 10:
+        relatorioVoluntarios();
+        break;
+    case 11:
+        relatorioInspetores();
+    case 12:
+        break;
+    default:
+        break;
+    }
+}
 
 void menu(){
     int selecao1;
     int selecao2;
+    int selecao3;
+
     printf("\n=========================================================== \n");
     printf("                  JOGOS OLIMPICOS DE 2024                   \n");
     printf("                 SOFTWARE DE ADMINISTRACAO                  \n");
@@ -30,70 +136,19 @@ void menu(){
     printf("\nSelecione uma opcao digitando seu respectivo numero abaixo: \n");
     printf("1 - Cadastro de Informacoes \n");
     printf("2 - Relatorios \n");
-    printf("3 - Sair \n");
+    printf("3 - Calendario \n");
+    printf("4 - Sair\n");
     scanf("%d", &selecao1);
 
     switch (selecao1){
         case 1:
-            printf("\nSelecione uma opcao digitando seu respectivo numero abaixo: \n");
-            printf("1 - Cadastro de Atletas \n");
-            printf("2 - Cadastro de Modalidade \n");
-            printf("3 - Cadastro de Equipe Olimpica \n");
-            printf("4 - Cadastro de Pais \n");
-            printf("5 - Cadastro de Alojamento \n");
-            printf("6 - Cadastro de Locais de Jogos \n");
-            printf("7 - Cadastro de Equipamentos \n");
-            printf("8 - Cadastro de Medicos \n");
-            printf("9 - Cadastro de Funcionarios \n");
-            printf("10 - Cadastro de Voluntarios \n");
-            printf("11 - Cadastro de Inspetores COVID \n");
-            //printf("12 - Voltar \n");
-            while ((selecao2 < 1) || (selecao2 > 11)){
-                scanf("%d", &selecao2);
-            }
-            
-            switch (selecao2){
-                case 1:
-                    cadastroatleta();
-                    break;
-                case 2:
-                    cadastromodalidade();
-                    break;
-                case 3:
-                    cadastroequipe();
-                    break;
-                case 4:
-                    cadastropais();
-                    break;
-                case 5:
-                    cadastroalojamento();
-                    break;
-                case 6:
-                    cadastrolocais();
-                    break;
-                case 7:
-                    cadastroequipamentos();
-                    break;
-                case 8:
-                    cadastromedicos();
-                    break;
-                case 9:
-                    cadastrofuncionarios();
-                    break;
-                case 10:
-                    cadastrovoluntarios();
-                    break;
-                case 11:
-                    cadastroinspetores();
-                case 12:
-                    break;
-                default: 
-                    break;
-            }
+            selecaoCadastro();
             break;
         case 2:
+            selecaoRelatorio();
             break;
         case 3:
+        calendario();
             break;
         default:
             break;
@@ -320,7 +375,7 @@ void cadastropais(){
     fflush(stdin);
 
     printf("\nInsira o ID deste pais (Ex. BRA para Brasil). \n");
-    fgets(atual.id, 3, stdin);
+    fgets(atual.id, 5, stdin);
     atual.id[strlen(atual.id) - 1] = '\0';
     fflush(stdin);
 
@@ -329,7 +384,7 @@ void cadastropais(){
     fflush(stdin);
 
     printf("\nInsira a quantidade de medicos deste pais. \n");
-    scanf("%d", &atual.qtdatletas);
+    scanf("%d", &atual.qtdmedicos);
     fflush(stdin);
 
     printf("\nInsira a quantidade de funcionarios deste pais. \n");
@@ -836,6 +891,378 @@ void calendario() {
         printf("Mes invalido. Verifique a ortografia.\n\n");
     }
 
+}
+
+void relatorioAtleta(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de atletas sao organizadas da seguinte forma:\n");
+    printf("Cadastro,Nome Completo,Idade,Sexo,Nacionalidade,Modalidade\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/atletas.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== ATLETAS ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n===============================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
+}
+
+void relatorioModalidade(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de modalidades sao organizadas da seguinte forma:\n");
+    printf("Cadastro,Nome da Modalidade,Idade Maxima,Sexo,Regra 1,Regra 2,Regra 3,Regra 4,Regra 5.\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/modalidades.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== MODALIDADES ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n====================================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
+}
+
+void relatorioEquipe(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de equipe olimpica sao organizadas da seguinte forma:\n");
+    printf("Identificacao,pais,quantidade de funcionarios\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/equipes.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== EQUIPES ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n===============================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
+}
+
+void relatorioPais(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de paises sao organizadas da seguinte forma:\n");
+    printf("Nome,Identificacao,Quantidade de atletas,Quantidade de Medicos,Quantidade de Funcionarios\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/paises.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== PAISES ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n================================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
+}
+
+void relatorioAlojamento(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de alojamentos sao organizadas da seguinte forma:\n");
+    printf("Capacidade,Setor,Sexo\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/alojamentos.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== ALOJAMENTOS ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n===================================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
+}
+
+void relatorioLocais(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de locais de jogo sao organizadas da seguinte forma:\n");
+    printf("Nome,Modalidade\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/locaisjogos.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== LOCAIS ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n==============================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
+}
+
+void relatorioEquipamentos(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de equipamentos sao organizadas da seguinte forma:\n");
+    printf("Modalidade,Equipamento de Jogo 1,Equipamento de Jogo 2,Equipamento de Jogo 3,Equipamento de Protecao 1,Equipamento de Protecao 2,Equipamento de Protecao 3\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/equipamentos.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== EQUIPAMENTOS ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n====================================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
+}
+
+void relatorioTreinamentos(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de treinamentos sao organizadas da seguinte forma:\n");
+    printf("Pais,Data,Horario,Frequencia Semanal\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/treinamentos.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== TREINAMENTOS ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n===============================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
+}
+
+void relatorioMedicos(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de medicos sao organizadas da seguinte forma:\n");
+    printf("Nome,Pais,Especializacao\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/medicos.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== MEDICOS ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n===============================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
+}
+
+void relatorioFuncionarios(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de funcionarios sao organizadas da seguinte forma:\n");
+    printf("Nome,Pais,Area de Atuacao,Cargo\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/funcionarios.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== FUNCIONARIOS ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n====================================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
+}
+
+void relatorioVoluntarios(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de voluntarios sao organizadas da seguinte forma:\n");
+    printf("Nome,Pais\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/voluntarios.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== VOLUNTARIOS ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n===================================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
+}
+
+void relatorioInspetores(){
+    system("cls");
+    printf("\n\nAs informacoes no relatorio de inspetores COVID sao organizadas da seguinte forma:\n");
+    printf("Nome,Pais\n\n");
+    getchar();
+
+    FILE* ptr;
+    char ch;
+ 
+    ptr = fopen("Database/inspetorescovid.csv", "r");
+ 
+    if (NULL == ptr) {
+        printf("Nao foi possível abrir o arquivo. Tente novamente. \n");
+    }
+ 
+    printf("==================== INSPETORES ====================\n\n");
+ 
+    do {
+        ch = fgetc(ptr);
+        printf("%c", ch);
+ 
+    } while (ch != EOF);
+ 
+    fclose(ptr);
+    printf("\n==================================================\n");
+    printf("Pressione enter para voltar para o menu.");
+    getchar();
+    system("cls");
+    menu();
 }
 
 void main(){

@@ -1,5 +1,32 @@
 #define LIMITEMAXIMO 50
 
+void menu();
+void calendario();
+void cadastromodalidade();
+void cadastroequipe();
+void cadastropais();
+void cadastroalojamento();
+void cadastrolocais();
+void cadastroequipamentos();
+void cadastrotreinamentos();
+void cadastromedicos();
+void cadastrofuncionarios();
+void cadastrovoluntarios();
+void cadastroinspetores();
+void cadastroatleta();
+void relatorioAtleta();
+void relatorioModalidade();
+void relatorioEquipe();
+void relatorioPais();
+void relatorioAlojamento();
+void relatorioLocais();
+void relatorioEquipamentos();
+void relatorioMedicos();
+void relatorioFuncionarios();
+void relatorioVoluntarios();
+void relatorioInspetores();
+
+
 typedef struct atleta{
     int codigo;
     int idade;
@@ -31,7 +58,7 @@ typedef struct modalidade{
     int qtdatletas;
     int qtdmedicos;
     int qtdfuncionarios;
-    char id[3];
+    char id[5];
     char nome[LIMITEMAXIMO];
  } pais;
 
