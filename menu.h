@@ -2,18 +2,19 @@
 
 void menu();
 void calendario();
-void cadastromodalidade();
-void cadastroequipe();
-void cadastropais();
-void cadastroalojamento();
-void cadastrolocais();
-void cadastroequipamentos();
-void cadastrotreinamentos();
-void cadastromedicos();
-void cadastrofuncionarios();
-void cadastrovoluntarios();
-void cadastroinspetores();
-void cadastroatleta();
+void cadastroAtleta();
+void cadastroModalidade();
+void cadastroEquipe();
+void cadastroPais();
+void cadastroAlojamento();
+void cadastroLocais();
+void cadastroEquipamentos();
+void cadastroTreinamentos();
+void cadastroMedicos();
+void cadastroFuncionarios();
+void cadastroVoluntarios();
+void cadastroInspetores();
+
 void relatorioAtleta();
 void relatorioModalidade();
 void relatorioEquipe();
