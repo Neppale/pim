@@ -14,6 +14,18 @@ void cadastrofuncionarios();
 void cadastrovoluntarios();
 void cadastroinspetores();
 void cadastroatleta();
+void relatorioAtleta();
+void relatorioModalidade();
+void relatorioEquipe();
+void relatorioPais();
+void relatorioAlojamento();
+void relatorioLocais();
+void relatorioEquipamentos();
+void relatorioMedicos();
+void relatorioFuncionarios();
+void relatorioVoluntarios();
+void relatorioInspetores();
+
 
 typedef struct atleta{
     int codigo;
@@ -46,7 +58,7 @@ typedef struct modalidade{
     int qtdatletas;
     int qtdmedicos;
     int qtdfuncionarios;
-    char id[3];
+    char id[5];
     char nome[LIMITEMAXIMO];
  } pais;
 
