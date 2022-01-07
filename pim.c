@@ -3,25 +3,131 @@
 #include <string.h>
 #include "menu.h"
 
-void menu();
-void calendario();
-void cadastromodalidade();
-void cadastroequipe();
-void cadastropais();
-void cadastroalojamento();
-void cadastrolocais();
-void cadastroequipamentos();
-void cadastrotreinamentos();
-void cadastromedicos();
-void cadastrofuncionarios();
-void cadastrovoluntarios();
-void cadastroinspetores();
-void cadastroatleta();
-void main();
+void selecaoCadastro() {
+    int selecao2;
+
+    printf("\nSelecione uma opcao digitando seu respectivo numero abaixo: \n");
+    printf("1 - Cadastro de Atletas \n");
+    printf("2 - Cadastro de Modalidade \n");
+    printf("3 - Cadastro de Equipe Olimpica \n");
+    printf("4 - Cadastro de Pais \n");
+    printf("5 - Cadastro de Alojamento \n");
+    printf("6 - Cadastro de Locais de Jogos \n");
+    printf("7 - Cadastro de Equipamentos \n");
+    printf("8 - Cadastro de Medicos \n");
+    printf("9 - Cadastro de Funcionarios \n");
+    printf("10 - Cadastro de Voluntarios \n");
+    printf("11 - Cadastro de Inspetores COVID \n");
+    //printf("12 - Voltar \n");
+    while ((selecao2 < 1) || (selecao2 > 11)) {
+        scanf("%d", & selecao2);
+    }
+
+    switch (selecao2) {
+    case 1:
+        cadastroatleta();
+        break;
+    case 2:
+        cadastromodalidade();
+        break;
+    case 3:
+        cadastroequipe();
+        break;
+    case 4:
+        cadastropais();
+        break;
+    case 5:
+        cadastroalojamento();
+        break;
+    case 6:
+        cadastrolocais();
+        break;
+    case 7:
+        cadastroequipamentos();
+        break;
+    case 8:
+        cadastromedicos();
+        break;
+    case 9:
+        cadastrofuncionarios();
+        break;
+    case 10:
+        cadastrovoluntarios();
+        break;
+    case 11:
+        cadastroinspetores();
+    case 12:
+        break;
+    default:
+        break;
+    }
+}
+
+void selecaoRelatorio(){
+    int selecao2;
+
+    printf("\nSelecione uma opcao digitando seu respectivo numero abaixo: \n");
+    printf("1 - Relatorio de Atletas \n");
+    printf("2 - Relatorio de Modalidade \n");
+    printf("3 - Relatorio de Equipe Olimpica \n");
+    printf("4 - Relatorio de Pais \n");
+    printf("5 - Relatorio de Alojamento \n");
+    printf("6 - Relatorio de Locais de Jogos \n");
+    printf("7 - Relatorio de Equipamentos \n");
+    printf("8 - Relatorio de Medicos \n");
+    printf("9 - Relatorio de Funcionarios \n");
+    printf("10 - Relatorio de Voluntarios \n");
+    printf("11 - Relatorio de Inspetores COVID \n");
+    //printf("12 - Voltar \n");
+    while ((selecao2 < 1) || (selecao2 > 11)) {
+        scanf("%d", & selecao2);
+    }
+
+    switch (selecao2) {
+    case 1:
+        //relatorioatleta();
+        break;
+    case 2:
+        //relatoriomodalidade();
+        break;
+    case 3:
+        //relatorioequipe();
+        break;
+    case 4:
+        //relatoriopais();
+        break;
+    case 5:
+        //relatorioalojamento();
+        break;
+    case 6:
+        //relatoriolocais();
+        break;
+    case 7:
+        //relatorioequipamentos();
+        break;
+    case 8:
+        //relatoriomedicos();
+        break;
+    case 9:
+        //relatoriofuncionarios();
+        break;
+    case 10:
+        //relatoriovoluntarios();
+        break;
+    case 11:
+        //relatorioinspetores();
+    case 12:
+        break;
+    default:
+        break;
+    }
+}
 
 void menu(){
     int selecao1;
     int selecao2;
+    int selecao3;
+
     printf("\n=========================================================== \n");
     printf("                  JOGOS OLIMPICOS DE 2024                   \n");
     printf("                 SOFTWARE DE ADMINISTRACAO                  \n");
@@ -30,70 +136,19 @@ void menu(){
     printf("\nSelecione uma opcao digitando seu respectivo numero abaixo: \n");
     printf("1 - Cadastro de Informacoes \n");
     printf("2 - Relatorios \n");
-    printf("3 - Sair \n");
+    printf("3 - Calendario \n");
+    printf("4 - Sair\n");
     scanf("%d", &selecao1);
 
     switch (selecao1){
         case 1:
-            printf("\nSelecione uma opcao digitando seu respectivo numero abaixo: \n");
-            printf("1 - Cadastro de Atletas \n");
-            printf("2 - Cadastro de Modalidade \n");
-            printf("3 - Cadastro de Equipe Olimpica \n");
-            printf("4 - Cadastro de Pais \n");
-            printf("5 - Cadastro de Alojamento \n");
-            printf("6 - Cadastro de Locais de Jogos \n");
-            printf("7 - Cadastro de Equipamentos \n");
-            printf("8 - Cadastro de Medicos \n");
-            printf("9 - Cadastro de Funcionarios \n");
-            printf("10 - Cadastro de Voluntarios \n");
-            printf("11 - Cadastro de Inspetores COVID \n");
-            //printf("12 - Voltar \n");
-            while ((selecao2 < 1) || (selecao2 > 11)){
-                scanf("%d", &selecao2);
-            }
-            
-            switch (selecao2){
-                case 1:
-                    cadastroatleta();
-                    break;
-                case 2:
-                    cadastromodalidade();
-                    break;
-                case 3:
-                    cadastroequipe();
-                    break;
-                case 4:
-                    cadastropais();
-                    break;
-                case 5:
-                    cadastroalojamento();
-                    break;
-                case 6:
-                    cadastrolocais();
-                    break;
-                case 7:
-                    cadastroequipamentos();
-                    break;
-                case 8:
-                    cadastromedicos();
-                    break;
-                case 9:
-                    cadastrofuncionarios();
-                    break;
-                case 10:
-                    cadastrovoluntarios();
-                    break;
-                case 11:
-                    cadastroinspetores();
-                case 12:
-                    break;
-                default: 
-                    break;
-            }
+            selecaoCadastro();
             break;
         case 2:
+            selecaoRelatorio();
             break;
         case 3:
+        calendario();
             break;
         default:
             break;

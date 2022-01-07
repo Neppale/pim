@@ -1,5 +1,20 @@
 #define LIMITEMAXIMO 50
 
+void menu();
+void calendario();
+void cadastromodalidade();
+void cadastroequipe();
+void cadastropais();
+void cadastroalojamento();
+void cadastrolocais();
+void cadastroequipamentos();
+void cadastrotreinamentos();
+void cadastromedicos();
+void cadastrofuncionarios();
+void cadastrovoluntarios();
+void cadastroinspetores();
+void cadastroatleta();
+
 typedef struct atleta{
     int codigo;
     int idade;
